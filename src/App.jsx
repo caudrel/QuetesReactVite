@@ -17,7 +17,7 @@ function App() {
   ];
 
   const pokemon = pokemonList[0];
-  console.log(pokemon);
+  // console.log(pokemon);
 
   return (
     <>
