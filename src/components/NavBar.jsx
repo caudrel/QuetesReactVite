@@ -1,23 +1,11 @@
-export default function NavBar({
-  handleIndexDecrease,
-  handleIndexIncrease,
-  pokemonIndex,
-  pokemonList,
-}) {
+export default function NavBar({ pokemonList, goToPokemon }) {
   return (
     <>
-      <p>{pokemonIndex}</p>
-      {console.log(pokemonList)}
-      {pokemonIndex > 0 ? (
-        <button onClick={handleIndexDecrease}>Précédent</button>
-      ) : (
-        ""
-      )}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={handleIndexIncrease}>Suivant</button>
-      ) : (
-        ""
-      )}
+      {pokemonList.map((pokemon, index) => (
+        <button key={pokemon.name} onClick={() => goToPokemon(index)}>
+          {pokemon.name}
+        </button>
+      ))}
     </>
   );
 }
